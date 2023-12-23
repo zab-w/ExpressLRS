@@ -110,8 +110,8 @@ jobs:
             ;;
           *)
             # release build
-            PLATFORMIO_BUILD_FLAGS="-DRegulatory_Domain_FCC_915" pio run -e ${{ matrix.target }}
-            OUTDIR=~/artifacts/firmware/FCC/`echo ${{ matrix.target }} | sed s/_via.*//`
+            PLATFORMIO_BUILD_FLAGS="-DRegulatory_Domain_EU_868" pio run -e ${{ matrix.target }}
+            OUTDIR=~/artifacts/firmware/EU/`echo ${{ matrix.target }} | sed s/_via.*//`
             mkdir -p $OUTDIR
             mv .pio/build/${{ matrix.target }}/*.{elrs,bin} $OUTDIR >& /dev/null || :
             ;;
